@@ -39,9 +39,7 @@ def call(String buildStatus = 'STARTED', String appName = 'Unknown', String bran
                     status: "New CI Pipeline Run for ${appName} (#${BUILD_NUMBER}) initiated from ${branch} branch",
                     webhookUrl: "${teamsWebhook}",
                     color: '6699dd',
-                    message: """<html><h1> Automated Pipeline Notification </h1>
-                    <p>We're in early days testing out this functionality, but stay tuned for more rich notifications!</p>
-                    <p>In the meantime, you can view the build, <a href="${BUILD_URL}">here</a>.</html>"""
+                    message: details
                 )
 
   
