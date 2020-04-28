@@ -10,4 +10,5 @@ def call() {
     //sh "printenv"
     def scannerHome = tool 'SonarQube-Scanner (3.0.3.778)'
     echo "Sonar Qube Scanner Path: ${scannerHome}" 
+    echo "${currentBuild.result}"
 }                                              
