@@ -12,4 +12,6 @@ def call() {
     echo "Sonar Qube Scanner Path: ${scannerHome}" 
     echo "${currentBuild.currentResult}"
     def azureRegistry ="azure.groupeconnect.io"
+
+    return this
 }                                              
