@@ -12,6 +12,7 @@ def call() {
     echo "Sonar Qube Scanner Path: ${scannerHome}" 
     echo "${currentBuild.currentResult}"
     def azureRegistry ="azure.groupeconnect.io"
-
-    return this
+    def hash = sh(script: "git rev-parse HEAD",returnStdout: true).trim()
+    echo "Whatever this is ${hash}"
+    //return this
 }                                              
