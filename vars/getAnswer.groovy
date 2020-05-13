@@ -15,4 +15,8 @@ def call() {
     //def hash = sh(script: "git rev-parse HEAD",returnStdout: true).trim()
     //echo "Whatever this is ${hash}"
     //return this
-}                                              
+} 
+
+def call(String supressionList = ""){
+    echo "This call takes a SupressionList value"
+}
