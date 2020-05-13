@@ -13,6 +13,6 @@ def call() {
     echo "${currentBuild.currentResult}"
     //def azureRegistry ="azure.groupeconnect.io"
     //def hash = sh(script: "git rev-parse HEAD",returnStdout: true).trim()
-    echo "Whatever this is ${hash}"
+    //echo "Whatever this is ${hash}"
     //return this
 }                                              
