@@ -17,6 +17,6 @@ def call() {
     //return this
 } 
 
-def AEM(String supressionList = ""){
-    echo "This call takes a SupressionList value"
+def AEM(String supressionList = "Two"){
+    echo "This call takes a SupressionList value: ${supressionList}"
 }
