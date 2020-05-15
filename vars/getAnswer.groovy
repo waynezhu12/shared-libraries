@@ -9,7 +9,7 @@ def call() {
     def jobName = "${env.JOB_NAME}"
     def supressionFile = "suppression.xml"
 
- if (JOB_NAME.contains ('lib-S'))
+ if (JOB_NAME.contains ('lib-S')){
  echo "I got the tight name"
  }
  else {
