@@ -13,7 +13,7 @@ def call() {
  echo "I got the tight name"
  }
  else {
-     echo "${surpressionFile}"
+     echo "${supressionFile}"
  }
 
 
