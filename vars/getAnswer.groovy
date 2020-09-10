@@ -8,6 +8,11 @@ def call() {
     echo "From the Shared library : ${env.JOB_NAME}" 
     def jobName = "${env.JOB_NAME}"
     def supressionFile = "suppression.xml"
+    def appName = "Consumer-Marketing_aem-ui"
+    
+    if (${appName}.contains ('Consumer-Marketing')) {
+        echo "Matched the name"
+    }
 
  if (JOB_NAME.contains ('Lib-S') || JOB_NAME.contains ('Share') ){
  echo "I got the tight name"
