@@ -1,13 +1,13 @@
 #!/usr/bin/env groovy
 
 /**
- * Send notifications based on build status string
+ * Send notifications to development teams based on build status
  */
 def call(String buildStatus = 'STARTED', String appName = 'Unknown', String branch = 'Unknow branch') {
   // build status of null means successful
   buildStatus = buildStatus ?: 'SUCCESS'
   // appName of null means Pipeline didn't pass it
-  appName = appName ?: 'Unknown'
+  appName = appName ?: 'Unknown App'
   //branch of null means Pipeline didn't pass it
   branch = branch ?: 'Unknown Branch'
 
@@ -23,25 +23,25 @@ def call(String buildStatus = 'STARTED', String appName = 'Unknown', String bran
 
   // Override default values based on build status
   if (buildStatus == 'STARTED') {
-    color = 'YELLOW'
+    colorName = 'YELLOW'
     colorCode = '#FFFF00'
   } else if (buildStatus == 'SUCCESS') {
-    color = 'GREEN'
+    colorName = 'GREEN'
     colorCode = '#00FF00'
   } else {
-    color = 'RED'
+    colorName = 'RED'
     colorCode = '#FF0000'
   }
 
   // Send build notification to Teams channel
   // We can send to different Teams channel based on the ${appName} 
   office365ConnectorSend (
-                    status: "New CI Pipeline Run for ${appName} (#${BUILD_NUMBER}) initiated from ${branch} branch",
+                    status: " ${env.JOB_NAME} Pipeline Run for ${appName} (#${BUILD_NUMBER}) initiated from ${branch} branch",
                     webhookUrl: "${teamsWebhook}",
-                    color: '6699dd',
+                    color: colorCode,
                     message: details
                 )
 
-  
+  //We can send email as well
     
 }
